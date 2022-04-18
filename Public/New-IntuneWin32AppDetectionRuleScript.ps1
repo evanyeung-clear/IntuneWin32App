@@ -46,7 +46,7 @@ function New-IntuneWin32AppDetectionRuleScript {
         # Detect if passed script file exists
         if (Test-Path -Path $ScriptFile) {
             # Convert script file contents to base64 string
-            $ScriptContent = [System.Convert]::ToBase64String([System.IO.File]::ReadAllBytes("$($file)"))
+            $ScriptContent = [System.Convert]::ToBase64String([System.IO.File]::ReadAllBytes("$($ScriptFile)"))
 
             # Construct detection rule ordered table
             $DetectionRule = [ordered]@{
